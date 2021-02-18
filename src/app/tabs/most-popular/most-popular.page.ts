@@ -6,7 +6,7 @@ import { DataService } from '../data.service';
   selector: 'app-most-popular',
   template: ` <ion-header translucent>
       <ion-toolbar>
-        <ion-title>Top Stories</ion-title>
+        <ion-title>Most Popular</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>

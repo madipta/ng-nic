@@ -7,7 +7,7 @@ import { DataService } from '../data.service';
   template: `
     <ion-header translucent>
       <ion-toolbar>
-        <ion-title>Top Stories</ion-title>
+        <ion-title>Search</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>

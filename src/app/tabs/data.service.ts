@@ -36,8 +36,12 @@ export class DataService {
     return this.loadingSubject.asObservable();
   }
 
-  getTopStories(options?: RequestInit) {
-    return this.fetch(this.apiUrl + `top-stories?section=world`, options);
+  getTopStories(section = 'world', options?: RequestInit) {
+    return this.fetch(this.apiUrl + `top-stories?section=${encodeURIComponent(section)}`, options);
+  }
+
+  getTopStoriesSections(options?: RequestInit) {
+    return this.fetch(this.apiUrl + `top-stories-sections`, options);
   }
 
   getMostPopular(options?: RequestInit) {
