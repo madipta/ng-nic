@@ -34,10 +34,10 @@ import { DataService } from '../data.service';
               [src]="'https://static01.nyt.com/' + story.multimedia[0].url"
             ></ion-img>
             <ion-card-header>
-              <ion-card-subtitle>{{ story.section }}</ion-card-subtitle>
-              <ion-card-title>{{ story.title }}</ion-card-title>
+              <ion-card-subtitle>{{ story.section || story.section_name }}</ion-card-subtitle>
+              <ion-card-title>{{ story.title || story.headline?.main }}</ion-card-title>
             </ion-card-header>
-            <ion-card-content>{{ story.abstract }}</ion-card-content>
+            <ion-card-content>{{ story.lead_paragraph || story.abstract }}</ion-card-content>
           </ion-card>
         </ion-item>
       </ion-list>

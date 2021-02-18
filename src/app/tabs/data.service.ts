@@ -36,7 +36,7 @@ export class DataService {
   }
 
   getMostPopular(options?: RequestInit) {
-    return this.fetch(this.apiUrl + `most-popular?period=7`, options);
+    return this.fetch(this.apiUrl + `most-popular?period=1`, options);
   }
 
   search(search: string, options?: RequestInit) {
