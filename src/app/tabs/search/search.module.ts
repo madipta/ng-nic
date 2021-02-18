@@ -1,7 +1,8 @@
 import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 import { SearchPage } from './search.page';
 
 const routes: Routes = [
@@ -12,7 +13,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [IonicModule, CommonModule, RouterModule.forChild(routes)],
+  imports: [SharedModule, FormsModule, RouterModule.forChild(routes)],
   declarations: [SearchPage],
 })
 export class SearchPageModule {}

@@ -76,6 +76,11 @@ export class TopStoriesPage implements OnInit {
 
   constructor(private dataService: DataService) {}
 
+  ngOnInit(): void {
+    this.getTopStories();
+    this.getTopStoriesSections();
+  }
+
   getTopStories() {
     this.loadingSubject.next(true);
     this.dataService
@@ -98,11 +103,6 @@ export class TopStoriesPage implements OnInit {
           this.sections = val;
         }
       });
-  }
-
-  ngOnInit(): void {
-    this.getTopStories();
-    this.getTopStoriesSections();
   }
 
   onSelectChange(selectedValue: any) {

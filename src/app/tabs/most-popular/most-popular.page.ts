@@ -4,10 +4,11 @@ import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-most-popular',
-  template: ` <ion-header translucent>
-      <ion-toolbar>
-        <ion-title>Most Popular</ion-title>
-      </ion-toolbar>
+  template: `
+    <ion-header translucent>
+      <ion-item color="primary">
+        <ion-label><h1>Most Popular</h1></ion-label>
+      </ion-item>
     </ion-header>
     <ion-content>
       <ion-list *ngIf="stories$ | async as stories">

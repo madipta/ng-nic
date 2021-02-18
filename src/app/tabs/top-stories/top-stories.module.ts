@@ -1,7 +1,6 @@
-import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 import { TopStoriesPage } from './top-stories.page';
 
 const routes: Routes = [
@@ -12,7 +11,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [IonicModule, CommonModule, RouterModule.forChild(routes)],
+  imports: [SharedModule, RouterModule.forChild(routes)],
   declarations: [TopStoriesPage],
 })
 export class TopStoriesPageModule {}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DataService } from '../data.service';
 
@@ -6,9 +6,24 @@ import { DataService } from '../data.service';
   selector: 'app-search',
   template: `
     <ion-header translucent>
-      <ion-toolbar>
-        <ion-title>Search</ion-title>
-      </ion-toolbar>
+      <ion-item color="primary">
+        <ion-label><h1>Search</h1></ion-label>
+        <ion-input
+          type="search"
+          placeholder="keywords"
+          clearInput="true"
+          inputmode="search"
+          enterkeyhint="search"
+          slot="end"
+          [(ngModel)]="search"
+        ></ion-input>
+        <ion-button
+          (click)="onSearchClick()"
+          slot="end"
+          style="margin-left:.5rem;">
+          <ion-icon slot="icon-only" name="search-sharp"></ion-icon>
+        </ion-button>
+      </ion-item>
     </ion-header>
     <ion-content>
       <ion-list *ngIf="stories$ | async as stories">
@@ -29,12 +44,13 @@ import { DataService } from '../data.service';
     </ion-content>
   `,
 })
-export class SearchPage implements OnInit {
+export class SearchPage {
   stories$: Observable<any>;
+  search: string;
 
   constructor(private dataService: DataService) {}
 
-  ngOnInit(): void {
-    this.stories$ = this.dataService.search('amazon');
+  onSearchClick() {
+    this.stories$ = this.dataService.search(this.search);
   }
 }
